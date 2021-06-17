@@ -13,13 +13,9 @@ main(){
 
   FILE* arquivo;
 
-  inicializaHash(tab1);
-  numero_aleatorio(tab1);
-  criar_csv(tab1, "tab1.csv");
-  imprimeHash(tab1);
-  system("tab1.csv");
-/*
-  while(op != 5){
+ 
+
+  while(op != 7){
     
     printf("No de tabelas %d\n", num_tab);
     
@@ -207,7 +203,6 @@ main(){
         exit(1);  
     }
   }
-  */
 }
  
 
