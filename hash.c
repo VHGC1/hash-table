@@ -68,13 +68,16 @@ void criar_csv(Hash tab,char name[10]){
   arquivo = fopen(name, "w");
 
   for(int i = 0; i < tam; i++){
+    if(tab[i] == NULL){
+      fprintf(arquivo,"\n index[%d] ; NULL", i);
+    }
     if(tab[i] != NULL){
-      fprintf(arquivo,"\n %d",tab[i]->chave);
-      
+      fprintf(arquivo,"\n index[%d] ; %d", i, tab[i]->chave);
+
       node* aux =tab[i]->prox;
       
       while(aux!=NULL){
-        fprintf(arquivo,",%d",aux->chave);
+        fprintf(arquivo,";%d",aux->chave);
         aux=aux->prox;
    }
   }
