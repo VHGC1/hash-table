@@ -14,11 +14,7 @@ void inserir_elementos(Hash tab, int num);
 int hash(int chave);
 void excluir_alemento(node* node);
 void imprimeHash(Hash tab);
-void numero_aleatorio();
+void numero_aleatorio(Hash tab);
 void removeHash(Hash tab, int num);
 void imprimeColisao(Hash tab, int pos);
-
-void criarArquivo(FILE* arquivo);
-void reescreveArquivo(FILE* arquivo);
-void escreverArquivo(FILE* arquivo, int elemento);
-int carregaArquivo(Hash tab);
+void criar_csv(Hash tab);
