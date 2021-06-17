@@ -15,19 +15,20 @@ main(){
 
  
 
-  while(op != 7){
+  while(op != 8){
     
     printf("No de tabelas %d\n", num_tab);
     
     printf("[ 1 ] Criar tabela\n");
-    printf("[ 2 ] Mostrar tabela\n");
-    printf("[ 3 ] Unir\n");
-    printf("[ 4 ] Verificar existencia\n");
-    printf("[ 5 ] Inserir elementos\n");
-    printf("[ 6 ] Excluir elementos\n");
-    printf("[ 7 ] Sair\n");
+    printf("[ 2 ] Criar csv\n");
+    printf("[ 3 ] Imprimir tabela\n");
+    printf("[ 4 ] Unir\n");
+    printf("[ 5 ] Verificar existencia\n");
+    printf("[ 6 ] Inserir elementos\n");
+    printf("[ 7 ] Excluir elementos\n");
+    printf("[ 8 ] Sair\n");
     
-    printf("Digitar op:");
+    printf("\nDigitar op:");
     scanf("%d", &op);
 
     switch (op){
@@ -66,68 +67,50 @@ main(){
         printf("[ 2 ] tabela 2\n");
         printf("[ 3 ] tabela 3\n");
         
+        printf("Opcao:");
         scanf("%d", &op);
 
         if(op == 1){
-          printf("[ 1 ] imprimir\n");
-          printf("[ 2 ] abrir csv\n");
-
-          printf("Entre com a opcao desejada:\n");
-          scanf("%d", &op);
-
-          if(op == 1){
-            imprimeHash(tab1);
-          }
-
-          if(op == 2){
-            criar_csv(tab1, "tab1.csv");
-            system("tab1.csv");
-          }
+          criar_csv(tab1, "tab1.csv");
+          system("tab1.csv");
         }
-        
         if (op ==2){
-          printf("[ 1 ] imprimir\n");
-          printf("[ 2 ] abrir csv\n");
-
-          printf("Entre com a opcao desejada:\n");
-          scanf("%d", &op);
-
-          if(op == 1){
-            imprimeHash(tab2);
-          }
-
-          if(op == 2){
-            criar_csv(tab2, "tab2.csv");
-            system("tab2.csv");
-          }
+          criar_csv(tab2, "tab2.csv");
+          system("tab2.csv");
         }
-
         if(op == 3){
-          printf("[ 1 ] imprimir\n");
-          printf("[ 2 ] abrir csv\n");
-
-          printf("Entre com a opcao desejada:\n");
-          scanf("%d", &op); 
-
-          if(op == 1){
-            imprimeHash(tab3);
-          }
-
-          if(op == 2){
-            criar_csv(tab3, "tab3.csv");
-            system("tab3.csv");
-          }
+          criar_csv(tab3, "tab3.csv");
+          system("tab3.csv"); 
         }
-        
         break;
+
       case 3:
+        printf("Imprimir tabela\n");
+        printf("[ 1 ] tabela 1\n");
+        printf("[ 2 ] tabela 2\n");
+        printf("[ 3 ] tabela 3\n");
+        
+        printf("Opcao:");
+        scanf("%d", &op);
+
+        if(op == 1){
+          imprimeHash(tab1);
+        }
+        if (op ==2){
+          imprimeHash(tab2);
+        }
+        if(op == 3){
+          imprimeHash(tab3);
+        }
+        break;  
+      case 4:
         //Hash tab_merge;
         //unir();
         break;
-      case 4:
+      case 5:
         //existe();
         break;
-      case 5:
+      case 6:
         printf("Remover valor\n");
         printf("[ 1 ] tabela 1\n");
         printf("[ 2 ] tabela 2\n");
@@ -163,7 +146,7 @@ main(){
         }
 
         break;
-      case 6:
+      case 7:
         printf("Remover valor\n");
         printf("[ 1 ] tabela 1\n");
         printf("[ 2 ] tabela 2\n");
@@ -199,9 +182,10 @@ main(){
         }
 
         break;
-      case 7:
+      case 8:
         exit(1);  
     }
+    system("cls");
   }
 }
  
