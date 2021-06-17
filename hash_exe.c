@@ -84,8 +84,8 @@ main(){
           }
 
           if(op == 2){
-            criar_csv(tab1, "tab1");
-            //system("tab1.csv");
+            criar_csv(tab1, "tab1.csv");
+            system("tab1.csv");
           }
         }
         
@@ -101,7 +101,7 @@ main(){
           }
 
           if(op == 2){
-            criar_csv(tab2, "tab2");
+            criar_csv(tab2, "tab2.csv");
             system("tab2.csv");
           }
         }
@@ -118,7 +118,7 @@ main(){
           }
 
           if(op == 2){
-            criar_csv(tab3, "tab3");
+            criar_csv(tab3, "tab3.csv");
             system("tab3.csv");
           }
         }
