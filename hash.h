@@ -17,6 +17,7 @@ void imprimeHash(Hash tab);
 void numero_aleatorio();
 void removeHash(Hash tab, int num);
 void imprimeColisao(Hash tab, int pos);
+
 void criarArquivo(FILE* arquivo);
 void reescreveArquivo(FILE* arquivo);
 void escreverArquivo(FILE* arquivo, int elemento);

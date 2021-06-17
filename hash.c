@@ -1,24 +1,10 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-#include<time.h>
+#include <time.h>
+#include <windows.h>>
 #include "hash.h"
 
-/*
-node** criar(){
-  
-  node** tabela = (node**)malloc(sizeof(node*)*tam);
-  
-  if(tabela){
-    for(int i = 0; i < tam; i++){
-      tabela[i] = NULL;
-    }
-    return tabela;
-  }else{
-    return NULL;
-  }
-}
-*/
 
 void inicializaHash(Hash tab){
  int i;
@@ -50,7 +36,6 @@ void inserir_elementos(Hash tab, int num){
  }
 }
 
-
 int hash(int chave){
   return chave % tam;
 }
@@ -77,24 +62,50 @@ void imprimeHash(Hash tab){
  }
 }
 
-void criarArquivo(FILE* arquivo)
-{
+void criarArquivo(FILE* arquivo){
+ 
  arquivo = fopen("hash.txt", "r");
- if(arquivo == NULL)
- {
+ 
+ if(arquivo == NULL){
   arquivo = fopen("hash.txt", "w");
   fclose(arquivo);
- }else
- {
+ }else{
   return;
  }
 }
 
 
+void reescreveArquivo(FILE* arquivo){
+ arquivo = fopen("hash.txt", "w");
+ fclose(arquivo);
+}
+
 void escreverArquivo(FILE* arquivo, int elemento){
  arquivo = fopen("hash.txt", "a");
  fprintf(arquivo,"%3d\n",elemento);
  fclose(arquivo);
+}
+
+int carregaArquivo(Hash tab){
+ int elemento;
+ FILE* arquivo;
+ arquivo = fopen("hash.txt","r");
+ fseek(arquivo,0,SEEK_END);
+ if(ftell(arquivo) == 0){
+  return 0;
+ }
+ fseek(arquivo,0,SEEK_SET);
+ if(arquivo == NULL){
+  return 0;
+ }else{
+  while(!feof(arquivo)){
+   fscanf(arquivo,"%d",&elemento);
+   inserir_elementos(tab,elemento);
+  }
+  system("cls");
+ }
+ fclose(arquivo);
+ return 1;
 }
 
 void numero_aleatorio(){
@@ -107,35 +118,8 @@ void numero_aleatorio(){
     double range = maior-(-menor);
     double div = RAND_MAX / range;
     num = menor + (rand() / div);
-    //escreverArquivo(arquivo, num);
+    escreverArquivo(arquivo, num);
   }
-}
-
-int carregaArquivo(Hash tab)
-{
- int elemento;
- FILE* arquivo;
- arquivo = fopen("hash.txt","r");
- fseek(arquivo,0,SEEK_END);
- if(ftell(arquivo) == 0)
- {
-  return 0;
- }
- fseek(arquivo,0,SEEK_SET);
- if(arquivo == NULL)
- {
-  return 0;
- }else
- {
-  while(!feof(arquivo))
-  {
-   fscanf(arquivo,"%d",&elemento);
-   insereHash(tab,elemento);
-  }
-  system("cls");
- }
- fclose(arquivo);
- return 1;
 }
 
 void imprimeColisao(Hash tab, int pos){

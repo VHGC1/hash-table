@@ -9,8 +9,8 @@ main(){
 
   int op, num_tab = 0, num_del, num_ins;
 
-  //FILE* arquivo;
-  //criarArquivo(arquivo);
+  FILE* arquivo;
+  criarArquivo(arquivo);
   
   while(op != 5){
     
@@ -37,7 +37,7 @@ main(){
           
         }
 
-        if (num_tab ==2){
+        if (num_tab == 2){
           inicializaHash(tab1);
           inicializaHash(tab2);     
         }
@@ -50,61 +50,60 @@ main(){
         
         break;
       case 2:
-
-      printf("Mostrar tabela\n");
-      printf("[ 1 ] tabela 1\n");
-      printf("[ 2 ] tabela 2\n");
-      printf("[ 3 ] tabela 3\n");
-      
-      scanf("%d", &op);
-
-      if(op == 1){
-        printf("[ 1 ] imprimir\n");
-        printf("[ 2 ] abrir csv\n");
-
-        printf("Entre com a opcao desejada:\n");
+        printf("Mostrar tabela\n");
+        printf("[ 1 ] tabela 1\n");
+        printf("[ 2 ] tabela 2\n");
+        printf("[ 3 ] tabela 3\n");
+        
         scanf("%d", &op);
 
         if(op == 1){
-          imprimeHash(tab1);
+          printf("[ 1 ] imprimir\n");
+          printf("[ 2 ] abrir csv\n");
+
+          printf("Entre com a opcao desejada:\n");
+          scanf("%d", &op);
+
+          if(op == 1){
+            imprimeHash(tab1);
+          }
+
+          if(op == 2){
+
+          }
+        }
+        
+        if (op ==2){
+          printf("[ 1 ] imprimir\n");
+          printf("[ 2 ] abrir csv\n");
+
+          printf("Entre com a opcao desejada:\n");
+          scanf("%d", &op);
+
+          if(op == 1){
+            imprimeHash(tab2);
+          }
+
+          if(op == 2){
+
+          }
         }
 
-        if(op == 2){
+        if(op == 3){
+          printf("[ 1 ] imprimir\n");
+          printf("[ 2 ] abrir csv\n");
 
+          printf("Entre com a opcao desejada:\n");
+          scanf("%d", &op); 
+
+          if(op == 1){
+            imprimeHash(tab3);
+          }
+
+          if(op == 2){
+
+          }
         }
-      }
-      
-      if (op ==2){
-        printf("[ 1 ] imprimir\n");
-        printf("[ 2 ] abrir csv\n");
-
-        printf("Entre com a opcao desejada:\n");
-        scanf("%d", &op);
-
-        if(op == 1){
-          imprimeHash(tab2);
-        }
-
-        if(op == 2){
-
-        }
-      }
-
-      if(op == 3){
-        printf("[ 1 ] imprimir\n");
-        printf("[ 2 ] abrir csv\n");
-
-        printf("Entre com a opcao desejada:\n");
-        scanf("%d", &op); 
-
-        if(op == 1){
-          imprimeHash(tab3);
-        }
-
-        if(op == 2){
-
-        }
-      }
         
         break;
       case 3:
@@ -115,8 +114,7 @@ main(){
         //existe();
         break;
       case 5:
-
-      printf("Remover valor\n");
+        printf("Remover valor\n");
         printf("[ 1 ] tabela 1\n");
         printf("[ 2 ] tabela 2\n");
         printf("[ 3 ] tabela 3\n");
@@ -185,7 +183,7 @@ main(){
           
           removeHash(tab3, num_del);          
         }
-        
+
         break;
       case 7:
         exit(1);  
