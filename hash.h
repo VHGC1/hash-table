@@ -17,4 +17,4 @@ void imprimeHash(Hash tab);
 void numero_aleatorio(Hash tab);
 void removeHash(Hash tab, int num);
 void imprimeColisao(Hash tab, int pos);
-void criar_csv(Hash tab);
+void criar_csv(Hash tab, char name[10]);

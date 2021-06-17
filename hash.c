@@ -62,6 +62,26 @@ void imprimeHash(Hash tab){
  }
 }
 
+void criar_csv(Hash tab,char name[10]){
+
+  FILE* arquivo;
+  arquivo = fopen(name, "w");
+
+  for(int i = 0; i < tam; i++){
+    if(tab[i] != NULL){
+      fprintf(arquivo,"\n %d",tab[i]->chave);
+      
+      node* aux =tab[i]->prox;
+      
+      while(aux!=NULL){
+        fprintf(arquivo,",%d",aux->chave);
+        aux=aux->prox;
+   }
+  }
+ }
+  fclose(arquivo);
+}
+
 void numero_aleatorio(Hash tab){
   int num;
   

@@ -12,7 +12,13 @@ main(){
   int num_del, num_ins;
 
   FILE* arquivo;
- 
+/*
+  inicializaHash(tab1);
+  numero_aleatorio(tab1);
+  criar_csv(tab1, "tab1.csv");
+  imprimeHash(tab1);
+  system("tab1.csv");
+*/
   while(op != 5){
     
     printf("No de tabelas %d\n", num_tab);
@@ -78,8 +84,8 @@ main(){
           }
 
           if(op == 2){
-            criar_csv(tab1);
-            system("tab1.csv");
+            criar_csv(tab1, "tab1");
+            //system("tab1.csv");
           }
         }
         
@@ -95,7 +101,8 @@ main(){
           }
 
           if(op == 2){
-
+            criar_csv(tab2, "tab2");
+            system("tab2.csv");
           }
         }
 
@@ -111,7 +118,8 @@ main(){
           }
 
           if(op == 2){
-
+            criar_csv(tab3, "tab3");
+            system("tab3.csv");
           }
         }
         
